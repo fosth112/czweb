@@ -5,11 +5,7 @@ const resolveBaseUrl = () => {
     return process.env.NEXT_PUBLIC_API_URL
   }
 
-  if (process.env.NODE_ENV === "development") {
-    return "http://localhost:5000"
-  }
 
-  return ""
 }
 
 const axiosInstance = axios.create({

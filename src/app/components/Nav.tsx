@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { useAuth } from "@/contexts/AuthContext"
 import {
     DropdownMenu,
@@ -18,21 +19,32 @@ import { TbReorder } from "react-icons/tb";
 function Nav() {
     const { isAuthenticated, logout, user } = useAuth();
     return (
-        <nav className="flex justify-center px-3 py-3 bg-white/90 backdrop-blur sticky top-0 border-b border-neutral-200 z-50">
+
             <div className="w-full max-w-screen-lg flex justify-between items-center">
 
-                <div>
-                    <Link href={'/'} className="font-bold ou">
+                <div className="flex items-center gap-6">
+                    <Link href={'/'} className="font-bold ou text-white flex items-center gap-2">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 border border-white/10 text-cyan-400">X</span>
                         PROLEAK
                     </Link>
+                    <div className="hidden md:flex items-center gap-4 text-sm text-slate-300">
+                        <Link href="/" className="hover:text-white">หน้าแรก</Link>
+                        <Link href="/store" className="hover:text-white">ร้านค้า</Link>
+                        <Link href="/topup" className="hover:text-white">เติมเงิน</Link>
+                        <Link href="/history/order" className="hover:text-white">บิลเกม</Link>
+                    </div>
                 </div>
 
                 <div className="flex items-center space-x-2 text-sm">
+                    <div className="hidden md:block">
+                        <Input
+                            placeholder="ค้นหาสินค้า..."
+                            className="h-9 w-56 rounded-full border-white/10 bg-white/5 text-white placeholder:text-slate-400"
+                        />
+                    </div>
                     {isAuthenticated ? (
                         <>
-                            <div className="flex items-center gap-2 bg-neutral-100 px-3 py-1 text-xs font-medium border border-neutral-200 rounded-full">
-                                <FaCoins className="text-neutral-500 text-sm" />
-                                <span className="font-semibold text-neutral-700">
+
                                     {(user?.points || 0).toLocaleString()} บาท
                                 </span>
                             </div>
@@ -41,7 +53,7 @@ function Nav() {
                                 <DropdownMenuTrigger>
                                     <img
                                         src="https://server.cdn.proleakinnovation.com/storage/4522714ebb27e1407d6f10d3b4241b20.jpg"
-                                        className="w-[30px] h-[30px] rounded-full border border-neutral-200"
+
                                         alt="User avatar"
                                     />
                                 </DropdownMenuTrigger>
@@ -90,12 +102,12 @@ function Nav() {
                         </>
                     ) : (
                         <>
-                            <Button variant="ghost" asChild>
+
                                 <Link href={'/signup'}>
                                     สมัครสมาชิก
                                 </Link>
                             </Button>
-                            <Button variant="default" asChild>
+
                                 <Link href={'/signin'}>
                                     เข้าสู่ระบบ
                                 </Link>

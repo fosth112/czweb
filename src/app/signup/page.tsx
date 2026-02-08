@@ -49,11 +49,11 @@ function page() {
     <ReverseProtected>
       <div>
         <Nav />
-        <main className="min-h-screen flex justify-center items-center">
-          <div className="w-full max-w-xs">
+        <main className="min-h-screen flex justify-center items-center px-3">
+          <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-white/5 p-6">
             <div className="mb-5">
-              <h1 className="text-lg font-semibold text-center">สมัครสมาชิก</h1>
-              <p className="text-xs -mt-1 text-center">sign up</p>
+              <h1 className="text-lg font-semibold text-center text-white">สมัครสมาชิก</h1>
+              <p className="text-xs -mt-1 text-center text-slate-400">sign up</p>
             </div>
             <form className="space-y-3" onSubmit={handleSubmit}>
               <Input 
@@ -61,6 +61,7 @@ function page() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
+                className="border-white/10 bg-slate-950/60 text-white placeholder:text-slate-400"
               />
               <Input 
                 placeholder="รหัสผ่าน"
@@ -68,10 +69,11 @@ function page() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                className="border-white/10 bg-slate-950/60 text-white placeholder:text-slate-400"
               />
               <Button 
                 variant={'outline'} 
-                className="w-full" 
+                className="w-full border-white/10 text-slate-200 hover:text-white" 
                 type="submit"
                 disabled={isLoading}
               >
@@ -79,7 +81,7 @@ function page() {
               </Button>
             </form>
             <div className="mt-5">
-              <p className="text-sm">มีบัญชีแล้ว <Link href={'/signin'} className="text-blue-500">เข้าสู่ระบบ</Link></p>
+              <p className="text-sm text-slate-300">มีบัญชีแล้ว <Link href={'/signin'} className="text-cyan-400">เข้าสู่ระบบ</Link></p>
             </div>
           </div>
         </main>
