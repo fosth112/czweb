@@ -19,7 +19,7 @@ import { TbReorder } from "react-icons/tb";
 function Nav() {
     const { isAuthenticated, logout, user } = useAuth();
     return (
-        <nav className="flex justify-center px-3 py-3 bg-slate-950/80 backdrop-blur sticky top-0 border-b border-white/10 z-50">
+
             <div className="w-full max-w-screen-lg flex justify-between items-center">
 
                 <div className="flex items-center gap-6">
@@ -44,9 +44,7 @@ function Nav() {
                     </div>
                     {isAuthenticated ? (
                         <>
-                            <div className="flex items-center gap-2 bg-white/5 px-3 py-1 text-xs font-medium border border-white/10 rounded-full text-white">
-                                <FaCoins className="text-amber-400 text-sm" />
-                                <span className="font-semibold text-slate-100">
+
                                     {(user?.points || 0).toLocaleString()} บาท
                                 </span>
                             </div>
@@ -55,7 +53,7 @@ function Nav() {
                                 <DropdownMenuTrigger>
                                     <img
                                         src="https://server.cdn.proleakinnovation.com/storage/4522714ebb27e1407d6f10d3b4241b20.jpg"
-                                        className="w-[32px] h-[32px] rounded-full border border-white/20"
+
                                         alt="User avatar"
                                     />
                                 </DropdownMenuTrigger>
@@ -104,12 +102,12 @@ function Nav() {
                         </>
                     ) : (
                         <>
-                            <Button variant="ghost" className="text-slate-200 hover:text-white" asChild>
+
                                 <Link href={'/signup'}>
                                     สมัครสมาชิก
                                 </Link>
                             </Button>
-                            <Button variant="default" className="bg-cyan-500 text-slate-950 hover:bg-cyan-400" asChild>
+
                                 <Link href={'/signin'}>
                                     เข้าสู่ระบบ
                                 </Link>
