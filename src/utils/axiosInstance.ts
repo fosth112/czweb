@@ -1,7 +1,19 @@
 import axios from "axios"
 
+const resolveBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    return "http://localhost:5000"
+  }
+
+  return ""
+}
+
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: resolveBaseUrl(),
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",

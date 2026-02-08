@@ -21,23 +21,28 @@ export default function Home() {
           </div>
         </section>
         <ProductR />
-        <section className="flex relative justify-center px-3 py-[100px] overflow-hidden mt-5">
+        <section className="flex relative justify-center px-3 py-16 overflow-hidden mt-8">
           <AnimatedGridPattern
             numSquares={30}
-            maxOpacity={0.1}
-            duration={3}
+            maxOpacity={0.05}
+            duration={4}
             repeatDelay={1}
             className={cn(
               "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-6",
             )}
           />
           <div className="w-full max-w-screen-lg">
 
-            <h2 className="font-bold text-center text-5xl">ซื้อหรือสั่งทำเว็บไซต์</h2>
-            <p className="text-2xl text-center font-semibold">ติดต่อผ่าน Discord ได้เลย!</p>
+            <h2 className="font-semibold text-center text-3xl text-neutral-900">ซื้อหรือสั่งทำเว็บไซต์</h2>
+            <p className="text-base text-center text-neutral-600">ติดต่อผ่าน Discord ได้เลย!</p>
             <div className="mt-5 flex justify-center">
-              <Link href={'https://discord.gg/kUpfn9Ujpm'} className="ou text-sm bg-indigo-500 px-5 py-2 text-white rounded-full flex items-center gap-2"><FaDiscord /> Discord</Link>
+              <Link
+                href={'https://discord.gg/kUpfn9Ujpm'}
+                className="ou text-sm bg-neutral-900 px-5 py-2 text-white rounded-full flex items-center gap-2"
+              >
+                <FaDiscord /> Discord
+              </Link>
             </div>
 
           </div>
