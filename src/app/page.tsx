@@ -69,12 +69,7 @@ export default function Home() {
           />
           <div className="w-full max-w-screen-lg">
 
-            <h2 className="font-semibold text-center text-3xl text-white">ซื้อหรือสั่งทำเว็บไซต์</h2>
-            <p className="text-base text-center text-slate-300">ติดต่อผ่าน Discord ได้เลย!</p>
-            <div className="mt-5 flex justify-center">
-              <Link
-                href={'https://discord.gg/kUpfn9Ujpm'}
-                className="ou text-sm bg-cyan-500 px-5 py-2 text-slate-950 rounded-full flex items-center gap-2"
+
               >
                 <FaDiscord /> Discord
               </Link>

@@ -5,7 +5,7 @@ const resolveBaseUrl = () => {
     return process.env.NEXT_PUBLIC_API_URL
   }
 
-  return "/api"
+
 }
 
 const axiosInstance = axios.create({

@@ -13,13 +13,7 @@ function ImageSlider() {
             <Carousel>
                 <CarouselContent>
                     <CarouselItem>
-                        <div className="w-full h-[260px] border border-white/10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950"></div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div className="w-full h-[260px] border border-white/10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950"></div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div className="w-full h-[260px] border border-white/10 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950"></div>
+
                     </CarouselItem>
                 </CarouselContent>
                 <div className="hidden xl:flex">
