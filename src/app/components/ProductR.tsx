@@ -65,48 +65,48 @@ function ProductR() {
     <section className="flex justify-center px-3 pt-5">
       <div className="w-full max-w-screen-lg">
         <div className="flex justify-between items-center">
-          <h2 className="font-semibold text-lg">สินค้าแนะนำ</h2>
+          <h2 className="font-semibold text-base text-neutral-900">สินค้าแนะนำ</h2>
           <div>
-            <Button variant={'outline'}>
-                <Link href={'/store'}>
-                    เพิ่มเติม
-                </Link>
+            <Button variant={'outline'} size="sm" asChild>
+              <Link href={'/store'}>
+                เพิ่มเติม
+              </Link>
             </Button>
           </div>
         </div>
-        <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {loading ? (
             Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} className="p-2 rounded-md border shadow animate-pulse h-64 bg-gray-100" />
+              <div key={i} className="p-2 rounded-md border border-neutral-200 animate-pulse h-56 bg-neutral-100" />
             ))
           ) : products.length > 0 ? (
             products.map((product) => (
-              <div key={product.id} className="border p-2 shadow rounded-md">
+              <div key={product.id} className="border border-neutral-200 p-2 rounded-md bg-white">
                 <div className="relative">
                   <img
                     src={product.image_url}
                     alt={product.name}
-                    className="w-full object-cover rounded-md"
+                    className="w-full object-cover rounded-md bg-neutral-50"
                     onError={(e) => {
                       e.currentTarget.src = 'https://via.placeholder.com/400x300?text=No+Image';
                     }}
                   />
                   <div className="absolute top-2 right-2">
-                    <span className={`px-2 py-1 rounded-full text-xs border border-green-300 ${getStatusColor(product.status)} bg-white`}>
+                    <span className={`px-2 py-1 rounded-full text-[10px] border border-neutral-200 ${getStatusColor(product.status)} bg-white`}>
                       {getStatusText(product.status)}
                     </span>
                   </div>
                 </div>
                 <div className="mt-2">
-                  <h4 className="font-semibold line-clamp-1">
+                  <h4 className="font-semibold text-sm text-neutral-900 line-clamp-1">
                     {product.name}
                   </h4>
-                  <div className='flex justify-between text-xs items-center'>
+                  <div className='flex justify-between text-[11px] items-center text-neutral-600'>
                     <p className={`${getStockColor(product.stock)}`}>{getStockText(product.stock)}</p>
                     <p>฿ {product.price.toLocaleString()}</p>
                   </div>
                   <div className="mt-2">
-                    <Button variant={'outline'} className="w-full">
+                    <Button variant={'outline'} size="sm" className="w-full" asChild>
                       <Link href={`/store/${product.id}`}>
                         รายละเอียด
                       </Link>
