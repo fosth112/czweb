@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen">
       <Nav />
-      <main className="min-h-screen pb-5">
+      <main className="pb-5">
         <ImageSlider />
         <section className="flex justify-center px-3 pt-6">
           <div className="w-full max-w-screen-lg grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -69,16 +69,14 @@ export default function Home() {
           />
           <div className="w-full max-w-screen-lg">
 
-
               >
                 <FaDiscord /> Discord
               </Link>
             </div>
-
           </div>
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

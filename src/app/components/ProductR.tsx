@@ -61,52 +61,7 @@ function ProductR() {
     return `${stock} รายการ`;
   };
 
-  return (
-    <section className="flex justify-center px-3 pt-5">
-      <div className="w-full max-w-screen-lg">
-        <div className="flex justify-between items-center">
 
-              <Link href={'/store'}>
-                เพิ่มเติม
-              </Link>
-            </Button>
-          </div>
-        </div>
-        <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {loading ? (
-            Array.from({ length: 10 }).map((_, i) => (
-
-                <div className="relative">
-                  <img
-                    src={product.image_url}
-                    alt={product.name}
-
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://via.placeholder.com/400x300?text=No+Image';
-                    }}
-                  />
-                  <div className="absolute top-2 right-2">
-
-                      {getStatusText(product.status)}
-                    </span>
-                  </div>
-                </div>
-                <div className="mt-2">
-
-                    <p className={`${getStockColor(product.stock)}`}>{getStockText(product.stock)}</p>
-                    <p>฿ {product.price.toLocaleString()}</p>
-                  </div>
-                  <div className="mt-2">
-
-                      <Link href={`/store/${product.id}`}>
-                        รายละเอียด
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
             <div className="col-span-5">
               <div className="text-center py-12">
                 <FaBox className="text-6xl text-gray-300 mx-auto mb-4" />
@@ -125,4 +80,4 @@ function ProductR() {
   )
 }
 
-export default ProductR
+
